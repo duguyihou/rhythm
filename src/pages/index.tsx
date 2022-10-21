@@ -1,10 +1,10 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
-    <div >
+    <div>
       <Head>
         <title>Rhythm</title>
         <meta name="description" content="radio" />
@@ -12,9 +12,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>
-          Welcome to Rhythm
-        </h1>
+        <h1 className="text-3xl underline">Welcome to Rhythm</h1>
       </main>
 
       <footer>
@@ -23,14 +21,14 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
