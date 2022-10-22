@@ -20,7 +20,7 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
-    name: "Lint: node-16, ubuntu-latest"
+    name: 'Lint: node-16, ubuntu-latest'
     steps:
       - uses: actions/checkout@v2
         with:
@@ -35,10 +35,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
-          cache: "pnpm"
+          cache: 'pnpm'
 
       - name: Install deps
         run: pnpm install
 
       - name: Lint format
         run: pnpm lint
+
+      - name: Run test
+        run: pnpm test
