@@ -9,6 +9,7 @@
     "lint": "next lint",
     "prepare": "husky install",
     "test": "jest --watch",
+    "test:ci": "jest --ci",
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
