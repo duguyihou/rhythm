@@ -13,6 +13,8 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.13.0",
+    "@tanstack/react-query-devtools": "^4.13.0",
     "clsx": "^1.2.1",
     "next": "12.3.1",
     "react": "18.2.0",
