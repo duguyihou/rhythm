@@ -1,19 +1,9 @@
 import type { NextPage } from 'next'
 
-import { Footer } from '../components/footer'
-import { Head } from '../components/head'
-import { MainLayout } from '../components/layout'
+import { ListenNow } from '../features/listenNow'
 
 const Home: NextPage = () => {
-  return (
-    <>
-      <Head />
-      <MainLayout>
-        <h1 className="text-3xl underline">Welcome to Rhythm</h1>
-      </MainLayout>
-      <Footer />
-    </>
-  )
+  return <ListenNow />
 }
 
 export default Home
