@@ -1,4 +1,4 @@
-module.exports = { extends: ["@commitlint/config-conventional"] };
+module.exports = { extends: ['@commitlint/config-conventional'] }
 
 // feat:  'A new feature',
 // fix:  'A bug fix',
