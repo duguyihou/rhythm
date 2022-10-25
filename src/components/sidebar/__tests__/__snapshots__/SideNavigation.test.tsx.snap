@@ -8,12 +8,58 @@ exports[`sideNavigation 1`] = `
       <div
         class="text-gray-700 hover:bg-gray-300 hover:text-gray-900 cursor-pointer group flex items-center px-2 py-2 text-base font-medium rounded-md"
       >
-        Listen Now
+        <div
+          class="w-4 h-4"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-circle-play "
+            data-icon="circle-play"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M512 256c0 141.4-114.6 256-256 256S0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+        <div
+          class="px-2"
+        >
+          Listen Now
+        </div>
       </div>
       <div
         class="text-gray-700 hover:bg-gray-300 hover:text-gray-900 cursor-pointer group flex items-center px-2 py-2 text-base font-medium rounded-md"
       >
-        Browse
+        <div
+          class="w-4 h-4"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-border-all "
+            data-icon="border-all"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M384 96V224H256V96H384zm0 192V416H256V288H384zM192 224H64V96H192V224zM64 288H192V416H64V288zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+        <div
+          class="px-2"
+        >
+          Browse
+        </div>
       </div>
     </div>
   </body>,
@@ -21,12 +67,58 @@ exports[`sideNavigation 1`] = `
     <div
       class="text-gray-700 hover:bg-gray-300 hover:text-gray-900 cursor-pointer group flex items-center px-2 py-2 text-base font-medium rounded-md"
     >
-      Listen Now
+      <div
+        class="w-4 h-4"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-circle-play "
+          data-icon="circle-play"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M512 256c0 141.4-114.6 256-256 256S0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <div
+        class="px-2"
+      >
+        Listen Now
+      </div>
     </div>
     <div
       class="text-gray-700 hover:bg-gray-300 hover:text-gray-900 cursor-pointer group flex items-center px-2 py-2 text-base font-medium rounded-md"
     >
-      Browse
+      <div
+        class="w-4 h-4"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-border-all "
+          data-icon="border-all"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M384 96V224H256V96H384zm0 192V416H256V288H384zM192 224H64V96H192V224zM64 288H192V416H64V288zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <div
+        class="px-2"
+      >
+        Browse
+      </div>
     </div>
   </div>,
   "debug": [Function],
