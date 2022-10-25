@@ -1,16 +1,16 @@
-import { ReactNode, Suspense } from 'react'
+import { ReactNode, Suspense, useState } from 'react'
 
-import { QueryClientProvider } from '@tanstack/react-query'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 import { Spinner } from '../components/elements'
-import { queryClient } from '../lib/react-query'
 
 type AppProviderProps = {
   children: ReactNode
 }
 
 const AppProvider = ({ children }: AppProviderProps) => {
+  const [queryClient] = useState(new QueryClient())
   return (
     <Suspense
       fallback={

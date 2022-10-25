@@ -27,6 +27,7 @@ specifiers:
   prettier: ^2.7.1
   react: 18.2.0
   react-dom: 18.2.0
+  react-query-kit: ^1.2.8
   sass: ^1.55.0
   tailwindcss: ^3.2.0
   typescript: 4.8.4
@@ -38,6 +39,7 @@ dependencies:
   next: 12.3.1_2mygebwfgdyopr3fy2qddu2eli
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-query-kit: 1.2.8_djz4nnd5briyzzfv2ifghffcda
 
 devDependencies:
   '@commitlint/cli': 17.1.2
@@ -4688,6 +4690,17 @@ packages:
   /react-is/18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
+
+  /react-query-kit/1.2.8_djz4nnd5briyzzfv2ifghffcda:
+    resolution: {integrity: sha512-1gPoJhCkXYWZsSw5hNRnVa1xKh8QhFa52tL7jRQQIZrS6C6u3pcui40Qwhiba7+L/Mp7WBVRo3k856vlNUWWFA==}
+    peerDependencies:
+      '@tanstack/react-query': '*'
+    peerDependenciesMeta:
+      '@tanstack/react-query':
+        optional: true
+    dependencies:
+      '@tanstack/react-query': 4.13.0_biqbaboplfbrettd7655fr4n2y
+    dev: false
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}

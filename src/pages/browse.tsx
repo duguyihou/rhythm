@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 
-import { Radios } from '../features/radio'
+import { Browse as BrowsePage } from '../features/radio'
 
 const Browse: NextPage = () => {
-  return <Radios />
+  return <BrowsePage />
 }
 
 export default Browse
