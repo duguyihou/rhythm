@@ -1,5 +1,6 @@
 import { ReactNode, Suspense } from 'react'
 
+// eslint-disable-next-line import/named
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
