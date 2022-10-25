@@ -1,1 +1,1 @@
-export { default as Browse } from './Browse'
+export { default as Radios } from './Radios'
