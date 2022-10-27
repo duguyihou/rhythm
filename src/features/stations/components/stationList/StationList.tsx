@@ -2,17 +2,17 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 import { Spinner } from '../../../../components/elements'
-import { useRadioList } from '../../hooks'
-import { Filter, RadioListProps } from './RadioList.types'
+import { useStationList } from '../../hooks'
+import { Filter, StationListProps } from './StationList.types'
 
-const RadioList = ({ filter }: RadioListProps) => {
+const StationList = ({ filter }: StationListProps) => {
   // TODO: extract a util function with generic type
   const filterVar = Object.keys(Filter)[
     Object.values(Filter).indexOf(filter as Filter)
   ] as keyof typeof Filter
 
   const variables = { filter: filterVar, offset: 5 }
-  const { data, isLoading } = useRadioList({ variables, suspense: true })
+  const { data, isLoading } = useStationList({ variables, suspense: true })
   if (isLoading) {
     return <Spinner />
   }
@@ -62,4 +62,4 @@ const RadioList = ({ filter }: RadioListProps) => {
   )
 }
 
-export default RadioList
+export default StationList
