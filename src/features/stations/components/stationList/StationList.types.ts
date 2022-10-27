@@ -44,6 +44,6 @@ export enum Filter {
   lastchange = 'Recently change',
 }
 
-export type RadioListProps = {
+export type StationListProps = {
   filter: `${Filter}`
 }

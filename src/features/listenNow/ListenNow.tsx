@@ -1,11 +1,11 @@
-import { RadioList } from '../radio/components'
-import { Filter } from '../radio/components/radioList/RadioList.types'
+import { StationList } from '../stations/components'
+import { Filter } from '../stations/components/stationList/StationList.types'
 
 const ListenNow = () => {
   return (
     <>
-      <RadioList filter={Filter.topvote} />
-      <RadioList filter={Filter.topclick} />
+      <StationList filter={Filter.topvote} />
+      <StationList filter={Filter.topclick} />
     </>
   )
 }
