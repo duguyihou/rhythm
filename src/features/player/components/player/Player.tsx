@@ -17,7 +17,7 @@ const Player = () => {
       )}
     >
       <FontAwesomeIcon
-        className="w-10 h-10 cursor-pointer"
+        className="w-10 h-10 cursor-pointer rounded-full"
         onClick={() => setPlaying(playing ? false : true)}
         icon={playing ? faStop : faCirclePlay}
       />
