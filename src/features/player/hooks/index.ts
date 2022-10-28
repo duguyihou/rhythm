@@ -1,16 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, MutableRefObject } from 'react'
 
-const useAudioPlayer = () => {
+const useAudioPlayer = (
+  audioRef: MutableRefObject<HTMLAudioElement | null>
+) => {
   const [duration, setDuration] = useState(0)
   const [curTime, setCurTime] = useState(0)
   const [playing, setPlaying] = useState(false)
   const [clickedTime, setClickedTime] = useState(null)
 
   useEffect(() => {
-    const audio = document.getElementById('audio') as HTMLAudioElement
+    if (!audioRef?.current) return
 
-    if (!audio) return
-
+    const audio = audioRef.current
     // state setters wrappers
     const setAudioData = () => {
       setDuration(audio.duration)
@@ -35,7 +36,7 @@ const useAudioPlayer = () => {
       audio.removeEventListener('loadeddata', setAudioData)
       audio.removeEventListener('timeupdate', setAudioTime)
     }
-  }, [playing, clickedTime, curTime])
+  }, [playing, clickedTime, curTime, audioRef])
 
   return {
     curTime,
