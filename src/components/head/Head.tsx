@@ -6,7 +6,7 @@ const NextHead = () => {
       <title>Rhythm</title>
       <meta name="description" content="radio" />
       <meta
-        http-equiv="Content-Security-Policy"
+        httpEquiv="Content-Security-Policy"
         content="upgrade-insecure-requests"
       ></meta>
       <link rel="icon" href="/favicon.ico" />
