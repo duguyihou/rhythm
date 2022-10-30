@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 import { Spinner } from '../../../../components/elements'
+import { usePlayerStore } from '../../../../stores/player'
 import { useStationList } from '../../hooks'
 import { Filter, StationListProps } from './StationList.types'
 
@@ -13,6 +14,7 @@ const StationList = ({ filter }: StationListProps) => {
 
   const variables = { filter: filterVar, offset: 5 }
   const { data, isLoading } = useStationList({ variables, suspense: true })
+  const setCurrentPlaying = usePlayerStore((state) => state.setCurrentPlaying)
   if (isLoading) {
     return <Spinner />
   }
@@ -23,7 +25,7 @@ const StationList = ({ filter }: StationListProps) => {
         {filter}
       </h1>
       <div className={clsx('grid grid-flow-row gap-4 grid-cols-5')}>
-        {data?.map(({ name, favicon }) => (
+        {data?.map((station) => (
           <span
             className={clsx(
               'bg-slate-50 hover:bg-slate-100 ',
@@ -31,13 +33,14 @@ const StationList = ({ filter }: StationListProps) => {
               'shadow-sm hover:shadow-md',
               'flex flex-col justify-center items-center'
             )}
-            key={name}
+            onClick={() => setCurrentPlaying(station)}
+            key={station.name}
           >
-            {favicon !== '' ? (
+            {station.favicon !== '' ? (
               <div className="w-20 h-20 relative">
                 <Image
-                  src={favicon}
-                  alt={name}
+                  src={station.favicon}
+                  alt={station.name}
                   layout="fill"
                   objectFit="contain"
                   className="rounded-md"
@@ -51,10 +54,15 @@ const StationList = ({ filter }: StationListProps) => {
                   'flex justify-center items-center'
                 )}
               >
-                {name[0].toUpperCase()}
+                {station.name[0].toUpperCase()}
               </div>
             )}
-            <h1 className="text-base truncate">{name}</h1>
+            <h1
+              className="text-base truncate"
+              onClick={() => setCurrentPlaying(station)}
+            >
+              {station.name}
+            </h1>
           </span>
         ))}
       </div>
