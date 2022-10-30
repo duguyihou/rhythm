@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 import { Spinner } from '../../../../components/elements'
-import { usePlayerStore } from '../../../../stores/player'
+import { usePlayerStore } from '../../../player'
 import { useStationList } from '../../hooks'
 import { Filter, StationListProps } from './StationList.types'
 
@@ -57,12 +57,7 @@ const StationList = ({ filter }: StationListProps) => {
                 {station.name[0].toUpperCase()}
               </div>
             )}
-            <h1
-              className="text-base truncate"
-              onClick={() => setCurrentPlaying(station)}
-            >
-              {station.name}
-            </h1>
+            <h1 className="text-base truncate">{station.name}</h1>
           </span>
         ))}
       </div>

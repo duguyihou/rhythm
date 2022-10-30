@@ -1,16 +1,13 @@
-import { useRef } from 'react'
-
 import { faCirclePlay, faStop } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import clsx from 'clsx'
 
-import { usePlayerStore } from '../../../../stores/player'
-import useAudioPlayer from '../../hooks'
+import { useAudioPlayer, usePlayerStore } from '../../hooks'
 
 const Player = () => {
-  const audio = useRef<HTMLAudioElement | null>(null)
-  const { playing, setPlaying } = useAudioPlayer(audio)
+  const { audioRef, playing, setPlaying } = useAudioPlayer()
   const currentPlaying = usePlayerStore((state) => state.currentPlaying)
+
   return (
     <figure
       className={clsx(
@@ -24,7 +21,7 @@ const Player = () => {
         icon={playing ? faStop : faCirclePlay}
       />
       <figcaption className="font-bold px-8">{currentPlaying?.name}</figcaption>
-      <audio ref={audio}>
+      <audio ref={audioRef}>
         <source src={currentPlaying?.url} type="audio/mpeg" />
       </audio>
     </figure>
