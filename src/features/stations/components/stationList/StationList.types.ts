@@ -1,4 +1,4 @@
-export type StationProps = {
+export type Station = {
   changeuuid: string
   stationuuid: string
   serveruuid: string | null
@@ -47,3 +47,5 @@ export enum Filter {
 export type StationListProps = {
   filter: `${Filter}`
 }
+
+export type StationList = Station[]

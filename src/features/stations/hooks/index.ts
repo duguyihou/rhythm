@@ -2,11 +2,9 @@ import { createQuery } from 'react-query-kit'
 
 import configService from '../../../config'
 import {
-  StationProps,
+  StationList,
   Filter,
 } from '../components/stationList/StationList.types'
-
-type StationList = StationProps[]
 
 type Variables = { filter: keyof typeof Filter; offset: number }
 

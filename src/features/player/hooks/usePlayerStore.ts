@@ -1,8 +1,7 @@
 import create from 'zustand'
 
-import { StationProps } from '../../stations/components'
+import { Station } from '../../stations/components'
 
-type Station = StationProps
 type PlayerStore = {
   currentPlaying?: Station
   setCurrentPlaying: (station: Station) => void
