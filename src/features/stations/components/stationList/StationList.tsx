@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Spinner } from '../../../../components/elements'
 import { usePlayerStore } from '../../../player'
 import { useStationList } from '../../hooks'
-import { Filter, StationListProps } from './StationList.types'
+import { Filter, Station, StationListProps } from './StationList.types'
 
 const StationList = ({ filter }: StationListProps) => {
   // TODO: extract a util function with generic type
@@ -17,6 +17,10 @@ const StationList = ({ filter }: StationListProps) => {
   const setCurrentPlaying = usePlayerStore((state) => state.setCurrentPlaying)
   if (isLoading) {
     return <Spinner />
+  }
+
+  const handleClick = (station: Station) => {
+    setCurrentPlaying(station)
   }
 
   return (
@@ -33,7 +37,7 @@ const StationList = ({ filter }: StationListProps) => {
               'shadow-sm hover:shadow-md',
               'flex flex-col justify-center items-center'
             )}
-            onClick={() => setCurrentPlaying(station)}
+            onClick={() => handleClick(station)}
             key={station.name}
           >
             {station.favicon !== '' ? (
