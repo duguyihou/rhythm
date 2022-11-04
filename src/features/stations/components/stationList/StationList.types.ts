@@ -47,5 +47,3 @@ export enum Filter {
 export type StationListProps = {
   filter: `${Filter}`
 }
-
-export type StationList = Station[]
