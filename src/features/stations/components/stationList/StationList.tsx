@@ -13,7 +13,7 @@ const StationList = ({ filter }: StationListProps) => {
   ] as keyof typeof Filter
 
   const variables = { filter: filterVar, offset: 5 }
-  const { data, isLoading } = useStationList({ variables, suspense: true })
+  const { data, isLoading } = useStationList(variables)
   const setCurrentPlaying = usePlayerStore((state) => state.setCurrentPlaying)
   if (isLoading) {
     return <Spinner />
