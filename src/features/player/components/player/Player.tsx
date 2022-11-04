@@ -11,16 +11,16 @@ const Player = ({ station }: PlayerProps) => {
   return (
     <figure
       className={clsx(
-        'w-fit h-fit p-2 bg-slate-50',
+        'w-fit h-fit p-2 ml-auto',
         'flex flex-row justify-start items-center '
       )}
     >
+      <figcaption className="font-bold px-8">{station.name}</figcaption>
       <FontAwesomeIcon
         className="w-10 h-10 cursor-pointer rounded-full"
         onClick={() => setPlaying(playing ? false : true)}
         icon={playing ? faStop : faCirclePlay}
       />
-      <figcaption className="font-bold px-8">{station.name}</figcaption>
       <audio ref={audioRef} src={station.url} />
     </figure>
   )

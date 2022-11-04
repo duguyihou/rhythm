@@ -1,13 +1,13 @@
+import { ContentLayout } from '../../../components/layout'
 import CountryList from '../../countries/components/CountryList'
 
 const Browse = () => {
   return (
-    <div>
-      Browse
+    <ContentLayout>
       <div>
         <CountryList />
       </div>
-    </div>
+    </ContentLayout>
   )
 }
 
