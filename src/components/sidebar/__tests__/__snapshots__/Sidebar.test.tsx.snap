@@ -15,9 +15,11 @@ exports[`sidebar 1`] = `
             class="flex flex-col h-0 flex-1"
           >
             <div
-              class="flex items-center h-16 flex-shrink-0 px-4 bg-gray-300"
+              class="flex items-center h-16 flex-shrink-0 px-4"
             >
-              <div>
+              <div
+                class="cursor-pointer"
+              >
                 Logo
               </div>
             </div>
@@ -25,7 +27,7 @@ exports[`sidebar 1`] = `
               class="flex-1 flex flex-col overflow-y-auto"
             >
               <nav
-                class="flex-1 px-2 py-4 bg-gray-200 space-y-1"
+                class="flex-1 px-2 py-4 space-y-1"
               >
                 <div
                   class="text-gray-700 hover:bg-gray-300 hover:text-gray-900 cursor-pointer group flex items-center px-2 py-2 text-base font-medium rounded-md"
@@ -101,9 +103,11 @@ exports[`sidebar 1`] = `
           class="flex flex-col h-0 flex-1"
         >
           <div
-            class="flex items-center h-16 flex-shrink-0 px-4 bg-gray-300"
+            class="flex items-center h-16 flex-shrink-0 px-4"
           >
-            <div>
+            <div
+              class="cursor-pointer"
+            >
               Logo
             </div>
           </div>
@@ -111,7 +115,7 @@ exports[`sidebar 1`] = `
             class="flex-1 flex flex-col overflow-y-auto"
           >
             <nav
-              class="flex-1 px-2 py-4 bg-gray-200 space-y-1"
+              class="flex-1 px-2 py-4 space-y-1"
             >
               <div
                 class="text-gray-700 hover:bg-gray-300 hover:text-gray-900 cursor-pointer group flex items-center px-2 py-2 text-base font-medium rounded-md"

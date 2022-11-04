@@ -1,4 +1,4 @@
-export type StationProps = {
+export type Station = {
   changeuuid: string
   stationuuid: string
   serveruuid: string | null
