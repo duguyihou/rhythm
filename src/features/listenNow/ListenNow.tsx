@@ -1,16 +1,13 @@
-import { Player, usePlayerStore } from '../player'
+import { ContentLayout } from '../../components/layout'
 import { StationList } from '../stations/components'
 import { Filter } from '../stations/components/stationList/StationList.types'
 
 const ListenNow = () => {
-  const currentPlaying = usePlayerStore((state) => state.currentPlaying)
-
   return (
-    <>
-      {currentPlaying && <Player station={currentPlaying} />}
+    <ContentLayout>
       <StationList filter={Filter.topvote} />
       <StationList filter={Filter.topclick} />
-    </>
+    </ContentLayout>
   )
 }
 
