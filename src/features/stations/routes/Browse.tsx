@@ -1,12 +1,10 @@
 import { ContentLayout } from '../../../components/layout'
-import CountryList from '../../countries/components/CountryList'
+import { AllStationList } from '../components/allStationList'
 
 const Browse = () => {
   return (
     <ContentLayout>
-      <div>
-        <CountryList />
-      </div>
+      <AllStationList />
     </ContentLayout>
   )
 }
