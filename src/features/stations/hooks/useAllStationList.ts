@@ -14,6 +14,7 @@ export const useAllStationList = () => {
       return result
     },
     suspense: true,
+    staleTime: 1000 * 60 * 60,
   })
   return queryResult
 }

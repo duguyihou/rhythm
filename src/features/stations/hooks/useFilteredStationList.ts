@@ -6,7 +6,7 @@ import { stationKeys } from './stationKeys'
 
 type Variables = { filter: keyof typeof Filter; offset: number }
 
-export const useStationList = (variables: Variables) => {
+export const useFilteredStationList = (variables: Variables) => {
   const { filter, offset } = variables
   const queryResult = useQuery<Station[], Error>({
     queryKey: stationKeys.list(filter),

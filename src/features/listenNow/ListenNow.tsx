@@ -1,12 +1,12 @@
 import { ContentLayout } from '../../components/layout'
-import { StationList } from '../stations/components'
-import { Filter } from '../stations/components/stationList/StationList.types'
+import { FilteredStationList } from '../stations/components'
+import { Filter } from '../stations/components/filteredStationList/FilteredStationList.types'
 
 const ListenNow = () => {
   return (
     <ContentLayout>
-      <StationList filter={Filter.topvote} />
-      <StationList filter={Filter.topclick} />
+      <FilteredStationList filter={Filter.topvote} />
+      <FilteredStationList filter={Filter.topclick} />
     </ContentLayout>
   )
 }

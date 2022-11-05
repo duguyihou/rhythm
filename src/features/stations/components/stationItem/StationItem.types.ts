@@ -36,14 +36,3 @@ export type Station = {
   geo_long: string | null
   has_extended_info: boolean
 }
-
-export enum Filter {
-  topclick = 'Top click',
-  topvote = 'Top vote',
-  lastclick = 'Recently click',
-  lastchange = 'Recently change',
-}
-
-export type StationListProps = {
-  filter: `${Filter}`
-}
