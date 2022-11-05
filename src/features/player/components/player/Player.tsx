@@ -5,8 +5,9 @@ import clsx from 'clsx'
 import { useAudioPlayer } from '../../hooks'
 import { PlayerProps } from './Player.types'
 
-const Player = ({ station }: PlayerProps) => {
-  const { audioRef, playing, setPlaying } = useAudioPlayer()
+const Player = ({ station, playingStatus }: PlayerProps) => {
+  const { name, url } = station
+  const { audioRef, playing, setPlaying } = useAudioPlayer(playingStatus)
 
   return (
     <figure
@@ -15,13 +16,13 @@ const Player = ({ station }: PlayerProps) => {
         'flex flex-row justify-start items-center '
       )}
     >
-      <figcaption className="font-bold px-8">{station.name}</figcaption>
+      <figcaption className="font-bold px-8">{name}</figcaption>
       <FontAwesomeIcon
         className="w-10 h-10 cursor-pointer rounded-full"
         onClick={() => setPlaying(playing ? false : true)}
         icon={playing ? faStop : faCirclePlay}
       />
-      <audio ref={audioRef} src={station.url} />
+      <audio ref={audioRef} src={url} />
     </figure>
   )
 }

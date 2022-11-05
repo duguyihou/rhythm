@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 
-const useAudioPlayer = () => {
+const useAudioPlayer = (playingStatus: boolean) => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   const [duration, setDuration] = useState(0)
   const [curTime, setCurTime] = useState(0)
-  const [playing, setPlaying] = useState(false)
+  const [playing, setPlaying] = useState(playingStatus)
   const [clickedTime, setClickedTime] = useState(null)
 
   useEffect(() => {
