@@ -5,11 +5,16 @@ import { Station } from '../../stations/components'
 type PlayerStore = {
   currentPlaying?: Station
   setCurrentPlaying: (station: Station) => void
+  playing: boolean
+  setPlaying: () => void
 }
 
 const usePlayerStore = create<PlayerStore>((set) => ({
   currentPlaying: undefined,
-  setCurrentPlaying: (station) => set(() => ({ currentPlaying: station })),
+  playing: false,
+  setCurrentPlaying: (station) =>
+    set(() => ({ currentPlaying: station, playing: true })),
+  setPlaying: () => set((playing) => ({ playing: !playing })),
 }))
 
 export default usePlayerStore

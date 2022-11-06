@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
 
-const useAudioPlayer = () => {
+const useAudioPlayer = (playing: boolean) => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   const [duration, setDuration] = useState(0)
   const [curTime, setCurTime] = useState(0)
-  const [playing, setPlaying] = useState(false)
   const [clickedTime, setClickedTime] = useState(null)
 
   useEffect(() => {
@@ -31,7 +30,7 @@ const useAudioPlayer = () => {
       audio.currentTime = clickedTime
       setClickedTime(null)
     }
-    // effect cleanup
+
     return () => {
       audio.removeEventListener('loadeddata', setAudioData)
       audio.removeEventListener('timeupdate', setAudioTime)
@@ -42,8 +41,6 @@ const useAudioPlayer = () => {
     audioRef,
     curTime,
     duration,
-    playing,
-    setPlaying,
     setClickedTime,
   }
 }

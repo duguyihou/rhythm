@@ -8,7 +8,7 @@ import { Station as StationProps } from './StationItem.types'
 
 const StationItem = (station: StationProps) => {
   const { name, favicon } = station
-  const setCurrentPlaying = usePlayerStore((state) => state.setCurrentPlaying)
+  const { setCurrentPlaying } = usePlayerStore()
 
   const handleClick = (station: StationProps) => {
     setCurrentPlaying(station)

@@ -7,7 +7,7 @@ import { Player, usePlayerStore } from '../../features/player'
 import { ContentLayoutProps } from './ContentLayout.types'
 
 const ContentLayout = (contentLayoutProps: ContentLayoutProps) => {
-  const currentPlaying = usePlayerStore((state) => state.currentPlaying)
+  const { currentPlaying } = usePlayerStore()
   const { children } = contentLayoutProps
   const { pathname } = useRouter()
 
