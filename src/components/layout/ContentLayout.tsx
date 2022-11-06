@@ -7,7 +7,7 @@ import { Player, usePlayerStore } from '../../features/player'
 import { ContentLayoutProps } from './ContentLayout.types'
 
 const ContentLayout = (contentLayoutProps: ContentLayoutProps) => {
-  const { currentPlaying, playingStatus } = usePlayerStore()
+  const { currentPlaying } = usePlayerStore()
   const { children } = contentLayoutProps
   const { pathname } = useRouter()
 
@@ -18,9 +18,7 @@ const ContentLayout = (contentLayoutProps: ContentLayoutProps) => {
         className={clsx('h-16 font-bold w-full', 'flex flex-row items-center')}
       >
         <div className="p-2">{title}</div>
-        {currentPlaying && (
-          <Player station={currentPlaying} playingStatus={playingStatus} />
-        )}
+        {currentPlaying && <Player station={currentPlaying} />}
       </div>
       <>{children}</>
     </div>
