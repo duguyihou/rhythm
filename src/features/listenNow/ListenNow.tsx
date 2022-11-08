@@ -1,6 +1,5 @@
 import { ContentLayout } from '../../components/layout'
-import { FilteredStationList } from '../stations/components'
-import { Filter } from '../stations/components/filteredStationList/FilteredStationList.types'
+import { FilteredStationList, Filter } from '../stations'
 
 const ListenNow = () => {
   return (

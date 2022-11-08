@@ -1,6 +1,6 @@
 import create from 'zustand'
 
-import { Station } from '../../stations/components'
+import { Station } from '../../stations'
 
 type PlayerStore = {
   currentPlaying?: Station
