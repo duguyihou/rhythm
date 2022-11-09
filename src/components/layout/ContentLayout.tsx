@@ -21,7 +21,7 @@ const ContentLayout = (contentLayoutProps: ContentLayoutProps) => {
         <div className="p-2">{title}</div>
         {currentPlaying && <Player station={currentPlaying} />}
       </div>
-      <div className="scrollbar-hide">{children}</div>
+      <div className="scrollbar-none">{children}</div>
     </div>
   )
 }
