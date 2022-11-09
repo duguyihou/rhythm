@@ -2,8 +2,8 @@ import '../index.css'
 
 import type { AppProps } from 'next/app'
 
-import { MainLayout } from '../components/layout'
-import AppProvider from '../providers/AppProvider'
+import { MainLayout } from 'components/layout'
+import AppProvider from 'providers/AppProvider'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

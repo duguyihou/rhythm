@@ -2,7 +2,8 @@ import React from 'react'
 
 import clsx from 'clsx'
 
-import { Spinner } from '../../../components/elements'
+import { Spinner } from 'components/elements'
+
 import { useCountries } from '../hooks'
 
 const CountryList = () => {

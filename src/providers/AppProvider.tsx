@@ -4,7 +4,7 @@ import { ReactNode, Suspense } from 'react'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
-import { Spinner } from '../components/elements'
+import { Spinner } from 'components/elements'
 
 type AppProviderProps = {
   children: ReactNode

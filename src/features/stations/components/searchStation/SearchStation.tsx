@@ -1,7 +1,7 @@
 import { ChangeEvent, KeyboardEvent, useRef, useState } from 'react'
 
-import { useDisclosure } from '../../../../hooks'
-import { useStationSearchByName } from '../../hooks'
+import { useStationSearchByName } from 'features/stations/hooks'
+import { useDisclosure } from 'hooks'
 
 const SearchStation = () => {
   const inputRef = useRef<HTMLInputElement | null>(null)

@@ -8,11 +8,13 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import clsx from 'clsx'
 import Link from 'next/link'
+
 type SideNavigationItem = {
   name: string
   to: string
   icon: IconDefinition
 }
+
 const SideNavigation = () => {
   const navigation: SideNavigationItem[] = [
     { name: 'Listen Now', to: '.', icon: faCirclePlay },

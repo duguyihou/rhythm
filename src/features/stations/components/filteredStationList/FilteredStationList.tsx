@@ -1,7 +1,8 @@
 import clsx from 'clsx'
 
-import { Spinner } from '../../../../components/elements'
-import { useFilteredStationList } from '../../hooks'
+import { Spinner } from 'components/elements'
+import { useFilteredStationList } from 'features/stations/hooks'
+
 import { StationItem } from '../stationItem'
 import { Filter, FilteredStationListProps } from './FilteredStationList.types'
 
