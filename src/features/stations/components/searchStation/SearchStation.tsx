@@ -1,14 +1,16 @@
-import { ChangeEvent, KeyboardEvent, useState } from 'react'
+import { ChangeEvent, KeyboardEvent, useRef, useState } from 'react'
 
-import { Dialog } from '../../../../components/elements'
-import { useDisclosure } from '../../../../hooks/useDisclosure'
+import { useDisclosure } from '../../../../hooks'
 import { useStationSearchByName } from '../../hooks'
 
 const SearchStation = () => {
+  const inputRef = useRef<HTMLInputElement | null>(null)
   const [input, setInput] = useState('')
-  const { data, refetch } = useStationSearchByName({ name: input })
   const { close, open, isOpen } = useDisclosure()
+  const [visible, setVisible] = useState(false)
+  const { data, refetch } = useStationSearchByName({ name: input })
 
+  const searchedStationList = data?.slice(0, 5)
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value)
   }
@@ -18,11 +20,15 @@ const SearchStation = () => {
       input !== '' && refetch()
     }
   }
-
+  const handleOnBlur = () => {
+    if (visible) return
+    close()
+  }
   return (
     <div className="flex flex-col">
       <div className="flex flex-row items-center rounded-sm relative">
         <input
+          ref={inputRef}
           value={input}
           className="p-1 m-4 flex-1 focus:outline-0 rounded-md"
           type="text"
@@ -30,7 +36,7 @@ const SearchStation = () => {
           onChange={handleOnChange}
           onKeyDown={handleOnKeyDown}
           onFocus={open}
-          onBlur={close}
+          onBlur={handleOnBlur}
         />
         <div className="absolute right-4">
           <svg
@@ -50,13 +56,22 @@ const SearchStation = () => {
           </svg>
         </div>
       </div>
-      <Dialog isOpen={isOpen} onClose={close}>
-        {data?.map((station) => (
-          <div className="p-2" key={station.stationuuid}>
-            {station.name}
-          </div>
-        ))}
-      </Dialog>
+      {isOpen && (
+        <div
+          className="shadow-lg rounded bg-slate-50 mx-4"
+          onMouseEnter={() => setVisible(true)}
+          onMouseLeave={() => {
+            setVisible(false)
+            inputRef.current?.focus()
+          }}
+        >
+          {searchedStationList?.map(({ stationuuid, name }) => (
+            <div className="p-2" key={stationuuid}>
+              {name}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
