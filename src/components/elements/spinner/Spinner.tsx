@@ -1,4 +1,4 @@
-import { clsx } from 'clsx'
+import clsx from 'clsx'
 
 import { SpinnerProps, sizes, variants } from './Spinner.types'
 

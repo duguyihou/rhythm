@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { clsx } from 'clsx'
+import clsx from 'clsx'
 import Image from 'next/image'
 
 import { usePlayerStore } from 'features/player'

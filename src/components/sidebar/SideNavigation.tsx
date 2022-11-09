@@ -6,7 +6,7 @@ import {
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { clsx } from 'clsx'
+import clsx from 'clsx'
 import Link from 'next/link'
 
 type SideNavigationItem = {

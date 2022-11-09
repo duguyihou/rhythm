@@ -1,4 +1,4 @@
-import { clsx } from 'clsx'
+import clsx from 'clsx'
 
 import { Spinner } from 'components/elements'
 import { useFilteredStationList } from 'features/stations/hooks'
