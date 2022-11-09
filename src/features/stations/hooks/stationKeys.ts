@@ -5,4 +5,6 @@ export const stationKeys = {
   lists: () => [...stationKeys.all, 'list'] as const,
   list: (filter: keyof typeof Filter) =>
     [...stationKeys.lists(), { filter }] as const,
+  searchList: (name: string) =>
+    [...stationKeys.all, 'searchList', { name }] as const,
 }
