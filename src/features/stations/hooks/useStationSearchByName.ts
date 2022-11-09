@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 
-import configService from '../../../config'
+import configService from 'config'
+
 import { Station } from '../components'
 import { stationKeys } from './stationKeys'
 

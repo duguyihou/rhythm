@@ -1,9 +1,10 @@
 import React from 'react'
 
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 
-import { Spinner } from '../../../../components/elements'
-import { useAllStationList } from '../../hooks'
+import { Spinner } from 'components/elements'
+import { useAllStationList } from 'features/stations/hooks'
+
 import { StationItem } from '../stationItem'
 
 const AllStationList = () => {

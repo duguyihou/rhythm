@@ -5,6 +5,11 @@
     "plugin:import/recommended",
     "prettier"
   ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
   "rules": {
     "no-unused-vars": "off",
     "no-console": "warn",

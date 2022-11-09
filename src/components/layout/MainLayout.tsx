@@ -2,7 +2,8 @@ import React from 'react'
 
 import { useRouter } from 'next/router'
 
-import { SearchStation } from '../../features/stations'
+import { SearchStation } from 'features/stations'
+
 import { Head } from '../head'
 import { Sidebar } from '../sidebar'
 import { MainLayoutProps } from './MainLayout.types'

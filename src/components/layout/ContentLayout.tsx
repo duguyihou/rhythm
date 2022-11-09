@@ -1,9 +1,10 @@
 import React from 'react'
 
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { useRouter } from 'next/router'
 
-import { Player, usePlayerStore } from '../../features/player'
+import { Player, usePlayerStore } from 'features/player'
+
 import { ContentLayoutProps } from './ContentLayout.types'
 
 const ContentLayout = (contentLayoutProps: ContentLayoutProps) => {

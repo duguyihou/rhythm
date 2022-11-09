@@ -1,6 +1,7 @@
 import { createQuery } from 'react-query-kit'
 
-import configService from '../../../config'
+import configService from 'config'
+
 import { Countries } from '../components'
 
 export const useCountries = createQuery<Countries>({

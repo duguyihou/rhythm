@@ -1,5 +1,5 @@
-import { ContentLayout } from '../../components/layout'
-import { FilteredStationList, Filter } from '../stations'
+import { ContentLayout } from 'components/layout'
+import { Filter, FilteredStationList } from 'features/stations'
 
 const ListenNow = () => {
   return (
