@@ -14,14 +14,14 @@ const ContentLayout = (contentLayoutProps: ContentLayoutProps) => {
 
   const title = pathname === '/' ? 'HOME' : pathname.slice(1).toUpperCase()
   return (
-    <div>
+    <div className="w-fit h-fit">
       <div
         className={clsx('h-16 font-bold w-full', 'flex flex-row items-center')}
       >
         <div className="p-2">{title}</div>
         {currentPlaying && <Player station={currentPlaying} />}
       </div>
-      <div className="scrollbar-none">{children}</div>
+      <div className="scrollbar-none overflow-hidden">{children}</div>
     </div>
   )
 }
