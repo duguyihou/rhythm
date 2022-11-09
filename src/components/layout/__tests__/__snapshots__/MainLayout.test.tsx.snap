@@ -94,7 +94,7 @@ exports[`mainLayout 1`] = `
           </div>
         </div>
         <main
-          class="relative overflow-y-auto focus:outline-none w-2/5 min-w-min"
+          class="relative focus:outline-none w-2/5 min-w-min scrollbar-none overflow-y-auto"
         >
           <h1>
             mainLayout
@@ -245,7 +245,7 @@ exports[`mainLayout 1`] = `
         </div>
       </div>
       <main
-        class="relative overflow-y-auto focus:outline-none w-2/5 min-w-min"
+        class="relative focus:outline-none w-2/5 min-w-min scrollbar-none overflow-y-auto"
       >
         <h1>
           mainLayout

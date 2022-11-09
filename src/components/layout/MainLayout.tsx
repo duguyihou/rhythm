@@ -1,5 +1,6 @@
 import React from 'react'
 
+import clsx from 'clsx'
 import { useRouter } from 'next/router'
 
 import { SearchStation } from 'features/stations'
@@ -16,7 +17,12 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       <Head />
       <div className="h-screen flex justify-center overflow-hidden bg-gray-100">
         <Sidebar />
-        <main className="relative overflow-y-auto focus:outline-none w-2/5 min-w-min">
+        <main
+          className={clsx(
+            'relative focus:outline-none w-2/5 min-w-min',
+            'scrollbar-none overflow-y-auto'
+          )}
+        >
           {children}
         </main>
         <div className="hidden md:flex md:flex-shrink-0">
