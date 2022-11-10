@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 import { Spinner } from 'components/elements'
 
-import { useCountries } from '../hooks'
+import { useCountries } from '../../hooks'
 
 const CountryList = () => {
   const { data, isLoading } = useCountries()
