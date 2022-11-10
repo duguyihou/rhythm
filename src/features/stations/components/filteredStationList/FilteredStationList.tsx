@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import Link from 'next/link'
 
 import { Spinner } from 'components/elements'
 import { useFilteredStationList } from 'features/stations/hooks'
@@ -24,9 +25,18 @@ const FilteredStationList = (
 
   return (
     <>
-      <h1 className={clsx('text-xl text-slate-900 font-bold p-1', 'uppercase')}>
-        {filter}
-      </h1>
+      <section
+        className={clsx('flex flex-row items-center justify-between', 'mx-2')}
+      >
+        <h1
+          className={clsx('text-xl text-slate-900 font-bold p-1', 'uppercase')}
+        >
+          {filter}
+        </h1>
+        <Link href={`./browse/${filterVar}`}>
+          <div className="cursor-pointer">See All</div>
+        </Link>
+      </section>
       <div className={clsx('grid grid-flow-row gap-4 grid-cols-5')}>
         {data?.map((station) => (
           <StationItem key={station.stationuuid} {...station} />
