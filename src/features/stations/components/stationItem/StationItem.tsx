@@ -26,9 +26,9 @@ const StationItem = (station: StationProps) => {
   return (
     <span
       className={clsx(
-        'bg-slate-50 hover:bg-slate-100 ',
-        'p-2 cursor-pointer rounded',
-        'shadow-sm hover:shadow-md',
+        'p-2 rounded w-full min-w-fit',
+        'bg-slate-50 hover:bg-slate-100',
+        'cursor-pointer shadow-sm hover:shadow-md',
         'flex flex-row'
       )}
       onClick={() => handleClick(station)}
