@@ -1,4 +1,4 @@
-import { faCirclePlay, faStop } from '@fortawesome/free-solid-svg-icons'
+import { faCirclePlay, faCircleStop } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import clsx from 'clsx'
 
@@ -19,8 +19,8 @@ const Player = ({ station }: PlayerProps) => {
       <figcaption className="font-bold px-8">{name}</figcaption>
       <FontAwesomeIcon
         className="w-10 h-10 cursor-pointer rounded-full"
-        onClick={() => setPlaying()}
-        icon={playing ? faStop : faCirclePlay}
+        onClick={() => setPlaying(!playing)}
+        icon={playing ? faCircleStop : faCirclePlay}
       />
       <audio ref={audioRef} src={url} />
     </figure>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { faCirclePlay } from '@fortawesome/free-solid-svg-icons'
+import { faCirclePlay, faCircleStop } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -12,11 +12,13 @@ import { Station as StationProps } from './StationItem.types'
 
 const StationItem = (station: StationProps) => {
   const { name, favicon, homepage } = station
-  const { setCurrentPlaying } = usePlayerStore()
+  const { setCurrentPlaying, playing, setPlaying, currentPlaying } =
+    usePlayerStore()
   const { open, close, isOpen } = useDisclosure()
 
   const handleClick = (station: StationProps) => {
     setCurrentPlaying(station)
+    setPlaying(currentPlaying === station ? !playing : true)
   }
 
   const hasFavicon =
@@ -41,7 +43,13 @@ const StationItem = (station: StationProps) => {
               'text-slate-100'
             )}
           >
-            <FontAwesomeIcon icon={faCirclePlay} />
+            <FontAwesomeIcon
+              icon={
+                currentPlaying === station && playing
+                  ? faCircleStop
+                  : faCirclePlay
+              }
+            />
           </div>
         )}
         {hasFavicon ? (
