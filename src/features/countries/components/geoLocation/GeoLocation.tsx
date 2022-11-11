@@ -6,7 +6,6 @@ const GeoLocation = () => {
   if (isLoading) {
     return <Spinner />
   }
-  console.log('🐵  ------ ', data)
   return <div>{data?.country_name}</div>
 }
 
