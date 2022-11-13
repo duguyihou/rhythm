@@ -16,7 +16,11 @@ const ContentLayout = (contentLayoutProps: ContentLayoutProps) => {
   return (
     <div>
       <div
-        className={clsx('h-16 font-bold w-full', 'flex flex-row items-center')}
+        className={clsx(
+          'h-16 font-bold w-full',
+          'flex flex-row items-center',
+          'sticky top-0 z-20 bg-gray-100'
+        )}
       >
         <div className="p-2">{title}</div>
         {currentPlaying && <Player station={currentPlaying} />}
