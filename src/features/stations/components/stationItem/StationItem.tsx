@@ -3,7 +3,6 @@ import React from 'react'
 import { faCirclePlay, faCircleStop } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import clsx from 'clsx'
-import Image from 'next/image'
 
 import { usePlayerStore } from 'features/player'
 import { useDisclosure } from 'hooks'
@@ -11,7 +10,7 @@ import { useDisclosure } from 'hooks'
 import { Station as StationProps } from './StationItem.types'
 
 const StationItem = (station: StationProps) => {
-  const { name, favicon, homepage } = station
+  const { name, homepage } = station
   const { setCurrentPlaying, playing, setPlaying, currentPlaying } =
     usePlayerStore()
   const { open, close, isOpen } = useDisclosure()
@@ -21,8 +20,6 @@ const StationItem = (station: StationProps) => {
     setPlaying(currentPlaying === station ? !playing : true)
   }
 
-  const hasFavicon =
-    station.favicon.startsWith('https://') && station.favicon !== 'ff'
   return (
     <span
       className={clsx(
@@ -52,27 +49,15 @@ const StationItem = (station: StationProps) => {
             />
           </div>
         )}
-        {hasFavicon ? (
-          <div className="w-12 h-12 relative">
-            <Image
-              src={favicon}
-              alt={name}
-              layout="fill"
-              objectFit="contain"
-              className="rounded-md"
-            />
-          </div>
-        ) : (
-          <div
-            className={clsx(
-              'w-12 h-12 text-3xl font-extrabold',
-              'bg-slate-500 rounded-md',
-              'flex justify-center items-center'
-            )}
-          >
-            {name.trim() !== '' ? name[0].toUpperCase() : 'unamed'}
-          </div>
-        )}
+        <div
+          className={clsx(
+            'w-12 h-12 text-3xl font-extrabold',
+            'bg-slate-500 rounded-md',
+            'flex justify-center items-center'
+          )}
+        >
+          {name.trim() !== '' ? name[0].toUpperCase() : 'X'}
+        </div>
       </div>
       <section className="flex flex-col w-44 h-full p-1">
         <h1 className="text-sm truncate w-full">{name}</h1>
