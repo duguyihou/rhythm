@@ -13,10 +13,14 @@ const Player = ({ station }: PlayerProps) => {
     <figure
       className={clsx(
         'w-fit h-fit p-2 ml-auto',
-        'flex flex-row justify-start items-center '
+        'flex flex-row justify-start items-center'
       )}
     >
-      <figcaption className="font-bold px-8">{name}</figcaption>
+      <figcaption
+        className={clsx('font-bold px-8', playing && 'animate-bounce')}
+      >
+        {name}
+      </figcaption>
       <FontAwesomeIcon
         className="w-10 h-10 cursor-pointer rounded-full"
         onClick={() => setPlaying(!playing)}
