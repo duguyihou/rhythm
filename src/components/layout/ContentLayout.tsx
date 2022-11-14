@@ -12,7 +12,7 @@ const ContentLayout = (contentLayoutProps: ContentLayoutProps) => {
   const { children } = contentLayoutProps
   const { pathname } = useRouter()
 
-  const title = pathname === '/' ? 'HOME' : pathname.slice(1).toUpperCase()
+  const title = pathname === '/' ? 'HOME' : 'BROWSE'
   return (
     <div>
       <div

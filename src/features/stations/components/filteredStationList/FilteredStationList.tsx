@@ -36,7 +36,7 @@ const FilteredStationList = (
         >
           {filter}
         </h1>
-        <Link href={`./browse/${filterVar}`}>
+        <Link href={`./browse`}>
           <div className="cursor-pointer text-sm hover:underline">See All</div>
         </Link>
       </section>
