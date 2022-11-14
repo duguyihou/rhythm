@@ -20,7 +20,7 @@ const AllStationList = () => {
         ALL
       </h1>
       <div className={clsx('grid grid-flow-row gap-4 grid-cols-5')}>
-        {data?.map((station) => (
+        {data?.slice(0, 100).map((station) => (
           <StationItem key={station.stationuuid} {...station} />
         ))}
       </div>
