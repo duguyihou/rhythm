@@ -17,7 +17,7 @@ const ContentLayout = (contentLayoutProps: ContentLayoutProps) => {
     <div>
       <div
         className={clsx(
-          'h-16 font-bold w-full',
+          'h-16 font-bold w-full text-lg',
           'flex flex-row items-center',
           'sticky top-0 z-20 bg-gray-100'
         )}

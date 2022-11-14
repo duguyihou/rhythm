@@ -17,7 +17,7 @@ type SideNavigationItem = {
 
 const SideNavigation = () => {
   const navigation: SideNavigationItem[] = [
-    { name: 'Listen Now', to: '.', icon: faCirclePlay },
+    { name: 'Listen Now', to: '/', icon: faCirclePlay },
     { name: 'Browse', to: './browse', icon: faBorderAll },
   ]
   return (
