@@ -86,9 +86,6 @@ exports[`sidebar 1`] = `
                   </div>
                 </div>
               </nav>
-              <section
-                class="mb-10"
-              />
             </div>
           </div>
         </div>
@@ -177,9 +174,6 @@ exports[`sidebar 1`] = `
                 </div>
               </div>
             </nav>
-            <section
-              class="mb-10"
-            />
           </div>
         </div>
       </div>
