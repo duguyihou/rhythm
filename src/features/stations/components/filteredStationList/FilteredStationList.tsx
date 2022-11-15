@@ -10,13 +10,13 @@ import { Filter, FilteredStationListProps } from './FilteredStationList.types'
 const FilteredStationList = (
   filteredStationListProps: FilteredStationListProps
 ) => {
-  const { filter, offset = 9 } = filteredStationListProps
+  const { filter } = filteredStationListProps
   // TODO: extract a util function with generic type
   const filterVar = Object.keys(Filter)[
     Object.values(Filter).indexOf(filter as Filter)
   ] as keyof typeof Filter
 
-  const variables = { filter: filterVar, offset }
+  const variables = { filter: filterVar }
   const { data, isLoading } = useFilteredStationList(variables)
 
   if (isLoading) {
