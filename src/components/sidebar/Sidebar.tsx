@@ -1,8 +1,11 @@
 import Link from 'next/link'
 
+import { Player, usePlayerStore } from 'features/player'
+
 import SideNavigation from './SideNavigation'
 
 const Sidebar = () => {
+  const { currentPlaying } = usePlayerStore()
   return (
     <div className="hidden md:flex md:flex-shrink-0">
       <div className="flex flex-col w-64">
@@ -16,6 +19,9 @@ const Sidebar = () => {
             <nav className="flex-1 px-2 py-4 space-y-1">
               <SideNavigation />
             </nav>
+            <section className="mb-10">
+              {currentPlaying && <Player station={currentPlaying} />}
+            </section>
           </div>
         </div>
       </div>
