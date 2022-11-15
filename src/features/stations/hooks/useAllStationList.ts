@@ -19,7 +19,7 @@ export const fetchAllStationList = async (variables: Variables) => {
   const {
     offset = 0,
     order = 'clickcount',
-    limit = 20,
+    limit = 30,
     has_extended_info = true,
     is_https = true,
     hidebroken = true,
@@ -39,10 +39,11 @@ export const fetchAllStationList = async (variables: Variables) => {
   return result
 }
 export const useAllStationList = (
+  page: number,
   queryFn: QueryFunction<Station[], QueryKey>
 ) => {
   const queryResult = useQuery<Station[], Error>({
-    queryKey: stationKeys.lists(),
+    queryKey: [...stationKeys.lists(), page],
     queryFn,
     suspense: true,
     staleTime: 1000 * 60 * 60,
