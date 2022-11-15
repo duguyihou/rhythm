@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 
+import { useQuery } from '@tanstack/react-query'
 import clsx from 'clsx'
 
 import { Spinner } from 'components/elements'
-import { useAllStationList } from 'features/stations/hooks'
+import { fetchAllStationList, stationKeys } from 'features/stations/hooks'
 
 import { StationItem } from '../stationItem'
 
 const AllStationList = () => {
-  const { data, isLoading } = useAllStationList({})
+  const [page, setPage] = useState(0)
+
+  const { data, isLoading } = useQuery(
+    [...stationKeys.lists(), page],
+    () => fetchAllStationList({ offset: page * 20 }),
+    { staleTime: 1000 * 60 * 60, keepPreviousData: true }
+  )
 
   if (isLoading) {
     return <Spinner />
@@ -42,6 +49,19 @@ const AllStationList = () => {
           <StationItem key={station.stationuuid} {...station} />
         ))}
       </div>
+      <button
+        onClick={() => setPage((old) => Math.max(old - 1, 0))}
+        disabled={page === 0}
+      >
+        Previous Page
+      </button>
+      <button
+        onClick={() => setPage((old) => old + 1)}
+        // Disable the Next Page button until we know a next page is available
+        // disabled={isPreviousData || !data?.hasMore}
+      >
+        Next Page
+      </button>
     </>
   )
 }
