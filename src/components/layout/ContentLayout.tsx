@@ -3,12 +3,9 @@ import React from 'react'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 
-import { Player, usePlayerStore } from 'features/player'
-
 import { ContentLayoutProps } from './ContentLayout.types'
 
 const ContentLayout = (contentLayoutProps: ContentLayoutProps) => {
-  const { currentPlaying } = usePlayerStore()
   const { children } = contentLayoutProps
   const { pathname } = useRouter()
 
@@ -23,7 +20,6 @@ const ContentLayout = (contentLayoutProps: ContentLayoutProps) => {
         )}
       >
         <div className="p-2">{title}</div>
-        {currentPlaying && <Player station={currentPlaying} />}
       </div>
       <div className="scrollbar-none">{children}</div>
     </div>
