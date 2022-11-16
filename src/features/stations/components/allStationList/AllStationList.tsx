@@ -17,7 +17,7 @@ const AllStationList = () => {
   }
 
   return (
-    <div className="relative h-[calc(100vh_-_4rem)]">
+    <>
       <section
         className={clsx('flex flex-row items-center justify-between', 'mx-2')}
       >
@@ -30,50 +30,52 @@ const AllStationList = () => {
           ALL
         </h1>
       </section>
-      <section
-        className={clsx(
-          'grid grid-flow-row gap-2',
-          '2xl:grid-cols-3',
-          'xl:grid-cols-2',
-          'lg:grid-cols-2',
-          'md:grid-cols-1',
-          'sm:grid-cols-1'
-        )}
-      >
-        {data?.map((station) => (
-          <StationItem key={station.stationuuid} {...station} />
-        ))}
-      </section>
-      <section
-        className={clsx(
-          'flex justify-center items-center',
-          'absolute w-full bottom-8'
-        )}
-      >
-        <button
+      <section>
+        <div
           className={clsx(
-            'text-sm bg-black text-white rounded-lg p-2 w-32',
-            'disabled:bg-slate-200 disabled:text-slate-500'
+            'grid grid-flow-row gap-2',
+            '2xl:grid-cols-3',
+            'xl:grid-cols-2',
+            'lg:grid-cols-2',
+            'md:grid-cols-1',
+            'sm:grid-cols-1'
           )}
-          onClick={() => setPage((old) => Math.max(old - 1, 0))}
-          disabled={page === 0}
         >
-          Previous Page
-        </button>
-        <span className="p-2">{page + 1}</span>
-        <button
+          {data?.map((station) => (
+            <StationItem key={station.stationuuid} {...station} />
+          ))}
+        </div>
+        <section
           className={clsx(
-            'text-sm bg-black text-white rounded-lg p-2 w-32',
-            'disabled:bg-slate-200 disabled:text-slate-500'
+            'flex justify-center items-center',
+            'w-full py-2 bg-gray-100'
           )}
-          onClick={() => setPage((old) => old + 1)}
-          //TODO: Disable the Next Page button when no more data
-          disabled={isPreviousData}
         >
-          Next Page
-        </button>
+          <button
+            className={clsx(
+              'text-sm bg-black text-white rounded-lg p-2 w-32',
+              'disabled:bg-slate-200 disabled:text-slate-500'
+            )}
+            onClick={() => setPage((old) => Math.max(old - 1, 0))}
+            disabled={page === 0}
+          >
+            Previous Page
+          </button>
+          <span className="p-2">{page + 1}</span>
+          <button
+            className={clsx(
+              'text-sm bg-black text-white rounded-lg p-2 w-32',
+              'disabled:bg-slate-200 disabled:text-slate-500'
+            )}
+            onClick={() => setPage((old) => old + 1)}
+            //TODO: Disable the Next Page button when no more data
+            disabled={isPreviousData}
+          >
+            Next Page
+          </button>
+        </section>
       </section>
-    </div>
+    </>
   )
 }
 
