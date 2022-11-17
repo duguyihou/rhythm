@@ -3,6 +3,7 @@ export enum Filter {
   topvote = 'Top vote',
   lastclick = 'Recently click',
   lastchange = 'Recently change',
+  country = 'Country',
 }
 
 export type FilteredStationListProps = {
